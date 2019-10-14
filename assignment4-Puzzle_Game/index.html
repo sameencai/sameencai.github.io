@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--jQuery链接-->
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+                integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+                crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+                integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+                crossorigin="anonymous"></script>
+        <!--jQuery color链接-->
+        <script src="https://github.com/jquery/jquery-color.git"></script>
+        <!--css <link rel="stylesheet" href="style.css"> -->
+        <!--BootstrapCDN-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!--font-->
+        <link href="https://fonts.googleapis.com/css?family=Yatra+One&display=swap" rel="stylesheet">
+        <title>Warrior and Dragon</title>
+        <style>
+          body {
+              font-family: 'Yatra One', cursive;
+                text-align:center;
+                font-size: xx-large;
+              margin:0 auto;
+              margin-top: 10%;
+              color:white;
+              background-color:black }
+        </style>
+  </head>
+  <body>
+    <img id = "witch"src="img\witch2.png" style="width: 200px;height: 200px;"class="img-fluid" alt="Responsive image">
+    <img id='dragon' src="img\dragon1.jpeg" style="width: 200px;height: 200px;display: none;"class="img-fluid" alt="Responsive image">
+    <img id='princess' src="img\princess.png" style="width: 200px;height: 200px;display: none;"class="img-fluid" alt="Responsive image">
+    <br></br>
+    <p class="align-middle">Wake up, my warrior</p>
+      <button id="answer1"type="button" class="btn btn-outline-secondary">Hum...What?</button>
+      <script>
+          $(document).ready(function(){
+            $("#answer1").click(function(){
+              $("p").text("Welcome, young warrior");
+              $("#answer1").hide();
+              $("#answer2").fadeIn();
+            });
+          });
+      </script>
+      <button id="answer2" type="button" class="btn btn-outline-secondary" style="display: none;">Hi?</button>
+      <script>
+             $(document).ready(function(){
+               $("#answer2").click(function(){
+                 $("p").text("This is the best world, and the worst world").fadeIn('slow');
+                 $("#answer2").hide();
+                 $("#answer3").fadeIn();
+               });
+             });
+         </script>
+         <button id="answer3" type="button" class="btn btn-outline-secondary" style="display: none;">Continue</button>
+      <script>
+             $(document).ready(function(){
+               $("#answer3").click(function(){
+                 $("p").text("You can find your fortune and win the beloved princess").fadeIn('slow');
+                 $("#answer3").hide();
+                 $("#answer4").fadeIn();
+               });
+             });
+         </script>
+         <button id="answer4"  type="button" class="btn btn-outline-secondary"  style="display: none;">Wow!</button>
+         <script>
+            $(document).ready(function(){
+              $("#answer4").click(function(){
+                $("p").text("Or killed by the evil dragon").fadeIn('slow');
+                $("#answer4").hide();
+                $("#answer5").fadeIn();
+              });
+            });
+        </script>
+        <button id="answer5"  type="button" class="btn btn-outline-secondary"  style="display: none;">Mm...</button>
+        <script>
+            $(document).ready(function(){
+              $("#answer5").click(function(){
+                $("p").text("Give me your name and get to start").fadeIn('slow');
+                $("#answer5").hide();
+                $("#name").fadeIn();
+              });
+            });
+        </script>
+        <div id = 'name' style="display: none;">
+        <input id="nameinput" class="form-control" type="text" placeholder="NAME" style="width: 200px;margin: 0 auto;">
+        <button id="submit"  type="button" class="btn btn-outline-secondary"  >OK...</button>
+      </div>
+        <script>
+            $(document).ready(function(){
+              $("#submit").click(function(){
+                $("p").text("Hi,"+  $("#nameinput").val()).fadeIn('slow');
+                $("#answer5").hide();
+                $("#nameinput").fadeIn();
+              });
+            });
+        </script>
+  <!--从这开始复制-->
+        <!--尝试验证是否为空，失败...
+          <div id = 'name' >
+            <form method="post" action="form-handler.html" onsubmit="return checkForm(this)">    
+                <input id="nameinput" class="form-control form-control-lg" name="inputfield"
+                type="text" placeholder="NAME" style="width: 200px;margin:0 auto;">
+                <input class="btn btn-primary" type="submit" value="OK..." >
+                </form>
+              </div>
+              <script>
+                    function checkForm(form){
+                        var errors=[];
+                        if(form.inputfield.value == ""){
+                                errors.push("Input is empty!");
+                        }
+                         else return true;
+                }
+                </script>
+                -->
+                <script>
+                    $(document).ready(function(){
+                        $("#submit").click(function(){
+                        $("p").text("Hi,"+  $("#nameinput").val()).fadeIn('slow');
+                        $("#submit").hide();
+                        $("#nameinput").hide();
+                        $("#answer21").fadeIn();
+                        });
+                    });
+                </script>
+                <button id="answer21"  type="button" class="btn btn-outline-secondary"  style="display: none;">Hi...ma'am?</button>
+                <script>
+                        $(document).ready(function(){
+                            $("#answer21").click(function(){
+                            $("p").text($("#nameinput").val()+", hope you can get what you want here");
+                            $("#answer21").hide();
+                            $("#answer22").fadeIn();
+                            });
+                        });
+                    </script>
+                    <button id="answer22"  type="button" class="btn btn-outline-secondary"  style="display: none;">Continue</button>
+                    <script>
+                            $(document).ready(function(){
+                                $("#answer22").click(function(){
+                                $("p").text($("#nameinput").val()+", Answer me one question now");
+                                $("#answer22").hide();
+                                $("#answer23").fadeIn();
+                                });
+                            });
+                        </script>
+                        <button id="answer23"  type="button" class="btn btn-outline-secondary"  style="display: none;">Continue</button>
+                <script>
+                        $(document).ready(function(){
+                            $("#answer23").click(function(){
+                            $("p").text("Which one following attracts you the most?");
+                            $("#answer23").hide();
+                            $("#answer24").fadeIn();
+                            });
+                        });
+                </script>   
+                    <div id = 'answer24'style="display: none;">
+                        <img id="treasure"  src="img/treasure-chest.png" style="width: 100px;height: 100px;">
+                        <img id="love" src="img/爱情.png" style="width: 100px;height: 100px;">
+                        <img id="challenge" src="img/挑战.png" style="width: 100px;height: 100px;">
+                        </div> 
+                       
+                            <!--detail
+                            <script>
+                                $(document).ready(function(){
+                                    $("#sword").mouseenter(function(){
+                                      $("#sworddetail").fadeIn();
+                                    });
+                                    $("#sword").mouseleave(function(){
+                                        $("#sworddetail").hide();
+                                    });
+                                  });$(document).ready(function(){
+                                    $("#bomb").mouseenter(function(){
+                                      $("#bombdetail").fadeIn();
+                                    });
+                                    $("#bomb").mouseleave(function(){
+                                        $("#bombdetail").hide();
+                                    });
+                                  });$(document).ready(function(){
+                                    $("#cloak").mouseenter(function(){
+                                      $("#cloakdetail").fadeIn();
+                                    });
+                                    $("#cloak").mouseleave(function(){
+                                        $("#cloakdetail").hide();
+                                    });
+                                  });
+                                </script>
+                                -->
+                    <script>
+                            $(document).ready(function(){
+                                $("#treasure").click(function(){
+                                $("p").text("Great, now you can choose 1 weapons as followed:");
+                                $("#treasure").hide();
+                                $("#love").hide();
+                                $("#challenge").hide();
+                                $("#weapon").fadeIn();
+                                });
+                            });
+                        </script>
+      <div id="weapon" style="display: none;">  
+        <!--<a href="sword.html"><img  id="sword" src="img/宝剑.png" style="width: 100px;height: 100px;"></a>-->
+        <img  id="sword" src="img/宝剑.png" style="width: 100px;height: 100px;">
+        <a href="bomb.html"><img id="bomb"src="img/炸弹.png"  style="width: 100px;height: 100px;"></a>
+        <a href="cloak.html"><img  id="cloak"src="img/斗篷.png"  style="width: 100px;height: 100px;"></a>
+      
+      </div>  
+      <div id='sworddetail' style="display: none;">sword detial</div>
+      <div id='bombdetail' style="display: none;">bomb detial</div>
+      <div id='cloakdetail' style="display: none;">cloak detial</div>
+<!--sword game-->
+      <script>
+        $(document).ready(function(){
+            $("#sword").click(function(){
+            $("p").text("Hello...FRIEND");
+            $("#sword").hide();
+            $("#bomb").hide();
+            $("#cloak").hide();
+            $("#cloak").hide();
+            $("#witch").hide();
+            $("#dragon").fadeIn();
+            $("#answer31").fadeIn();
+            $( "body" ).animate({
+      backgroundColor: "#0B3140",
+      });
+            });
+        });
+    </script>
+      
+      <button id="answer31"  type="button" class="btn btn-outline-secondary" style="display:none">What? Who's your friend? You evil beast!</button>
+      <script>
+              $(document).ready(function(){
+                  $("#answer31").click(function(){
+                  $("#answer31").hide();
+                  $("p").hide();
+                  $("#attack").fadeIn();
+                 
+                  });
+              });
+          </script>  
+
+      <div id="attack" style="display: none;">
+        <div id="blood">10</div>
+      <button id="bloodRemain" onclick="bloodCountDown()"style="background: url(img/宝剑1.png);width: 100px;height: 100px;border: hidden;"></button>
+      <div id="hint" style="opacity: 0.5;font-size: 20px;">click the sword to attack</div>
+      </div>
+      <script>
+      function bloodCountDown(){
+      var currentVal = document.getElementById("blood").innerHTML;
+      if (currentVal > 1){
+          newVal = currentVal - 1;
+          $( "body" ).animate({
+      backgroundColor: "red",
+      }, 50)
+      $( "body" ).animate({
+      backgroundColor: "#0B3140",
+      }, 50)
+      }
+      else {
+          $("#attack").hide();
+          $("#win").fadeIn();
+          $("#answer32").fadeIn();
+      }
+      document.getElementById("blood").innerHTML = newVal;
+      }
+      </script>
+      <div id="win" style="display: none;">AH...Sorry,FRIEND...</div>
+      <button id="answer32"  type="button" class="btn btn-outline-secondary" style="display: none;">This dragon must have mental problem...</button>
+      <script>
+      $(document).ready(function(){
+          $("#answer32").click(function(){
+          $("#dragon").hide();
+          $("#win").hide();
+          $("#answer32").hide();
+          $("#princess").fadeIn();
+          $("#princess1").fadeIn();
+          $("#answer33").fadeIn();
+          });
+      });
+      </script>
+      <div id="princess1" style="display: none;">You save me! Young warrior, you are my hero!</div>
+      <button id="answer33"  type="button" class="btn btn-outline-secondary" style="display: none;">God, are you the princess?</button>
+      <script>
+      $(document).ready(function(){
+        $("#answer33").click(function(){
+        $("#princess1").hide();
+        $("#answer33").hide();
+        $("#princess2").fadeIn();
+        $("#princess3").fadeIn();
+        $("#answer34").fadeIn();
+        });
+      });
+
+      </script>
+      <div id="princess2" style="display: none;">Yes! I think I fall in love with you already</div>
+      <div id="princess3" style="display: none;"> let's get married and share the fortune here!</div>
+      <button id="answer34"  type="button" class="btn btn-outline-secondary" style="display: none;">O...OK...Of course</button>
+      <script>
+      $(document).ready(function(){
+        $("#answer34").click(function(){
+        $("#princess").hide();
+        $("#princess2").hide();
+        $("#princess3").hide();
+        $("#answer34").hide();
+        $("#witch").fadeIn();
+        $("#witch1").fadeIn();
+        $("#answer35").fadeIn();
+        $( "body" ).animate({
+      backgroundColor: "black",
+      })
+        });
+      });
+      </script>
+      <div id="witch1" style="display: none;">Another fallen soul</div>
+      <button id="answer35"  type="button" class="btn btn-outline-secondary" style="display: none;">What? What happened to my voice?!</button>
+      <script>
+          $(document).ready(function(){
+              $("#answer35").click(function(){
+              $("#witch1").hide();
+            $("#answer35").hide();
+            $("#witch2").fadeIn();
+            $("#answer36").fadeIn();
+            });
+          })
+        </script>
+      <div id="witch2" style="display: none;">The night is dark and full of terrors</div>
+      <a href="index.html"><button id="answer36"  type="button" class="btn btn-outline-secondary" style="display: none;">TRY AGAIN</button></a>
+
+  
+  </body>
+</html>

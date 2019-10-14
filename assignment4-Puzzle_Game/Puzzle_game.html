@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>
+            Puzzle Game Design by Sameen
+        </title>
+        <script src="Puzzle_game.js"></script>
+    <style>
+        
+    </style>
+    </head>
+    <body>
+    <!--你的名字&问好-->
+    <h2>Welcome to the Puzzle World</h2>
+    <button onclick="greeting()">Enter</button>
+    <p id="demo"></p>
+
+    <form id="myForm">
+            <div class="form-group">
+              <div class="col-xs-4">
+                  <label for="1st">Give me your name to start the advanture:</label>
+                  <input type="text" class="form-control">
+              </div>
+              <div class="col-xs-4">
+              </div>
+            </div><!-- end of form-group -->
+            <script>
+            $(document).ready(function() {
+                 $("button#hide_h2").on('click', function(){
+                          $("h2").hide();
+                 });
+                 
+                $("button#show_h2").on('click',function(){
+                          $("h2").show();
+                          $("h2").css("color","blue");
+                          $("#hide_me").html("You clicked me.");
+              });
+            }); 
+          </script>
+        </form>
+
+    <!--P? 勇者消灭恶龙-->
+        <button onclick="releaseDragon()">Come on beast!</button>
+        <div id=meetTheDragon style="display:none">
+            <p>A huge dragon appear in front of you and roaring</p>
+            <p>Time to save the prince, warrior</p>
+            <p>Raise your sword to beat it</p>
+            <p>Click the 'Hit' button to beat the drangon, </p>
+            <p>click as many times as you can to get down the dragon.</p>
+            <button id="bloodRemain" onclick="bloodCountDown()">Hit</button>
+            <p>Dragon blood</p>
+            <p id=blood>20</p>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+    
+</html>
