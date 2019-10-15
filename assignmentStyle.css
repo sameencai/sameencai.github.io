@@ -1,17 +1,10 @@
 body {
-    padding-left: 11em;
+    padding-left: 5em;
     margin-top: 5%;
     font-family: 'Lexend Deca', sans-serif;
     color: purple;
     background-color: rgba(221, 221, 187, 0.329) }
 h1 {font-family: 'Manjari', sans-serif; }
-ul.navbar li {
-    background: rgb(221, 221, 187);
-    margin: 0.5em 0;
-    padding: 0.3em;
-    border-right: 1em solid purple }
-ul.navbar a {
-    text-decoration: none }
 a:link {
     color: white }
 a:visited {
