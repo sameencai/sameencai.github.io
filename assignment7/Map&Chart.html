@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--jQuery-->
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+        <!--bootstrap-->
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+        rel="stylesheet" type="text/css">
+        <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
+        rel="stylesheet" type="text/css">
+        <!--leaflet-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js"></script>
+        <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js"> </script>
+        <!--D3-->
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js">
+        </script>
+        <!--C3-->
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.js">
+        </script>
+        <link href="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.css" rel="stylesheet" type="text/css">
+        <!--from lesson 9.zip-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <style type="text/css">
+   #map {
+      height: 100%;
+    }
+  </style>
+       
+      </style>
+    </head>
+    
+    <body>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><span>Brand</span></a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="active">
+                            <a href="Map&amp;Chart.html">Map</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="jumbotron">
+                            <h1>CHART</h1>
+                            <a class="btn btn-primary btn-large" id="showchart">SHOW CHART</a>
+                        </div>
+                        <!--chart-->
+                        <div class="row" id="chart" style="display: none;"></div>
+                        <script>
+                            var chart = c3.generate({
+                            data: {
+                                columns: [
+                                    ['Lulu', 50],
+                                    ['Olaf', 50],
+                                ],
+                                type : 'donut'
+                            },
+                            donut: {
+                                title: "Dogs love:",
+                            }
+                        });
+                        </script>
+                        <script>
+                                $(document).ready(function(){
+                                  $("#showchart").click(function(){
+                                    $("#chart").fadeIn();
+                                  });
+                                });
+                            </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="jumbotron">
+                            <h1>MAP</h1>
+                            <a class="btn btn-primary btn-large">SHOW MAP</a>
+                        </div>
+                        <!--map-->
+                        <div class="row" id="map"></div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var mapboxTiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a>', maxZoom: 18,});
+        
+            var map = L.map('map')
+                  .addLayer(mapboxTiles)
+                  .setView([22.287111, 114.191667], 13);
+        
+        
+            var items = [];
+            var airtable_read_endpoint = "https://api.airtable.com/v0/appKIU0zkdHt3AVTL/Venues?api_key=keycj6dRwXwYLEjiv";
+        
+            var data = [];
+            $.getJSON(airtable_read_endpoint, function(result) {
+                   $.each(result.records, function(key,value) {
+                       items = {};
+                           items["name"] = value.fields.Name;
+                           items["url"] = value.fields.url;
+                           items["image_url"] = value.fields.img_url;
+                           items["latitud"] = value.fields.Lat;
+                           items["longitud"] = value.fields.Lng;
+                           data.push(items);
+                           console.log(items);
+                    }); // end .each
+            }); // end getJSON
+          </script>
+        <script src='scriptlib2.js'></script>
+    </body>
+</html>
