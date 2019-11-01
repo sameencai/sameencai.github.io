@@ -2,14 +2,29 @@
 <html>
     
     <head>
+        <title>Map & Chart</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js"></script>
+        <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js">
+</script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.js"></script>
+        <link href="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.css"
         rel="stylesheet" type="text/css">
-        <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
-        rel="stylesheet" type="text/css">
+        <style type="text/css">
+            #map {
+                  height: 100%;
+                }
+        </style>
     </head>
     
     <body>
@@ -26,30 +41,57 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-ex-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active">
-                            <a href="#">Home</a>
-                        </li>
                         <li>
-                            <a href="Map&Chart.html">Map</a>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="active">
+                            <a href="#">Map</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div id="fullcarousel-example" data-interval="false" class="carousel slide"
-        data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img src="file:///C:/Users/空空/Documents/GitHub/sameencai.github.io/assignment7/active-adult-athlete-416778.jpg">
-                    <div class="carousel-caption">
-                        <h2>Title</h2>
-                        <p>Description</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron">
+                        <h1>Chart</h1>
+                        <button type="button" class="btn btn-warning" id="get_data2">Show Chart</button>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="table-responsive">
+                                    <table id="table2" width="100%" class="table table-bordered"></table>
+                                </div>
+                    <!-- table responsive -->
+                    <div id="chart"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <a class="left carousel-control" href="#fullcarousel-example" data-slide="prev"><i class="icon-prev fa fa-angle-left"></i></a>
-            <a class="right carousel-control" href="#fullcarousel-example" data-slide="next"><i class="icon-next fa fa-angle-right"></i></a>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body"></div>
+                    </div>
+                    <div class="jumbotron">
+                        <h1>Map</h1>
+                        <button type="button" class="btn btn-warning" id='roll_up' onclick="show_districts();">Show Companies in Shenzhen</button><br>
+                        <div><br></div>
+                        <div id="map" style="width: 1000px; height: 400px;" class="container"></div>
+                </div>
+                    <div class="row">
+                        <!-- column -->
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- end col -->
+            </div>
+            <!--end row -->
         </div>
+        <!-- container -->
+        <div id="map"></div>
+        <script src="script.js"></script>
     </body>
 
 </html>

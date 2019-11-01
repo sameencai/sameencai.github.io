@@ -17,54 +17,7 @@ $(document).ready(function(){
     });
 
 //chart
-    $("button#get_data").click(function() {
-        var items = [];
-        var i = 0;
-        var airtable_read_endpoint = "https://api.airtable.com/v0/appXSoGTDQ6IdE0Iu/CompanyInformation?api_key=keyiUoXoMYkTNkr4G";
-       var dataSet = [];
-        $.getJSON(airtable_read_endpoint, function(result) {
-               $.each(result.records, function(key,value) {
-                   items = [];
-                       items.push(value.fields.Name);
-                       items.push(value.fields.rating);
-                       items.push(value.fields.fullname);
-                       items.push(value.fields.industry);
-                       items.push(value.fields.industryType);
-                       items.push(value.fields.scale);
-                       items.push(value.fields.base);
-                       items.push(value.fields.interviewdifficulty);
-                       items.push(value.fields.averagesalary);
-                       dataSet.push(items);
-                       console.log(items);
-                }); // end .each
-                console.log(dataSet);
-
-             $('#table1').DataTable( {
-                 data: dataSet,
-                 retrieve: true,
-                 columns: [
-                     { title: "Name",
-                       defaultContent:""},
-                     { title: "Rating",
-                         defaultContent:"" },
-                     { title: "Fullname",
-                       defaultContent:"" },
-                     { title: "Industry",
-                       defaultContent:""},
-                     { title: "Industry Type",
-                         defaultContent:""},
-                     { title: "Scale",
-                       defaultContent:""},
-                     { title: "Base",
-                       defaultContent:""},
-                     { title: "Interview Difficulty",
-                       defaultContent:""},
-                     { title: "Average Salary",
-                       defaultContent:""},
-                 ]
-             } );
-        }); // end .getJSON
-     }); // end button
+   
 
      $("button#get_data2").click(function() {
       var items = [];
