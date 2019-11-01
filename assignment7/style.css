@@ -1,0 +1,106 @@
+#map {
+    height: 100%;
+        }
+html{
+    scroll-behavior: smooth;
+        }
+body {
+    background-color:#d9b1ad; 
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+ 
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+ 
+.btn-primary {
+    background: #592E2E;
+    color: #ffffff;
+}
+ 
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #260101;
+}
+ 
+.btn-primary:active, .btn-primary.active {
+    background: #8C7370;
+    box-shadow: none;
+}
+
+        .navbar-default {
+            background-color: #592e2e;
+            border-color: #260101;
+          }
+          .navbar-default .navbar-brand {
+            color: #d9b1ad;
+          }
+          .navbar-default .navbar-brand:hover,
+          .navbar-default .navbar-brand:focus {
+            color: #8c7370;
+          }
+          .navbar-default .navbar-text {
+            color: #d9b1ad;
+          }
+          .navbar-default .navbar-nav > li > a {
+            color: #d9b1ad;
+          }
+          .navbar-default .navbar-nav > li > a:hover,
+          .navbar-default .navbar-nav > li > a:focus {
+            color: #8c7370;
+          }
+          .navbar-default .navbar-nav > .active > a,
+          .navbar-default .navbar-nav > .active > a:hover,
+          .navbar-default .navbar-nav > .active > a:focus {
+            color: #8c7370;
+            background-color: #260101;
+          }
+          .navbar-default .navbar-nav > .open > a,
+          .navbar-default .navbar-nav > .open > a:hover,
+          .navbar-default .navbar-nav > .open > a:focus {
+            color: #8c7370;
+            background-color: #260101;
+          }
+          .navbar-default .navbar-toggle {
+            border-color: #260101;
+          }
+          .navbar-default .navbar-toggle:hover,
+          .navbar-default .navbar-toggle:focus {
+            background-color: #260101;
+          }
+          .navbar-default .navbar-toggle .icon-bar {
+            background-color: #d9b1ad;
+          }
+          .navbar-default .navbar-collapse,
+          .navbar-default .navbar-form {
+            border-color: #d9b1ad;
+          }
+          .navbar-default .navbar-link {
+            color: #d9b1ad;
+          }
+          .navbar-default .navbar-link:hover {
+            color: #8c7370;
+          }
+          
+          @media (max-width: 767px) {
+            .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+              color: #d9b1ad;
+            }
+            .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+            .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+              color: #8c7370;
+            }
+            .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+            .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+            .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+              color: #8c7370;
+              background-color: #260101;
+            }
+          }
+          
