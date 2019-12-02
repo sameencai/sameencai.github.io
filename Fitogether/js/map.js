@@ -2,18 +2,18 @@ var mapboxTiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.pn
 
 var map = L.map('map')
       .addLayer(mapboxTiles)
-      .setView([22.615000, 114.159700], 10);
+      .setView([22.287111, 114.191667], 10);
 
 var items = [];
-var airtable_read_endpoint = "https://api.airtable.com/v0/apptYpOzvQlg0TiA6/1?api_key=keyAWB8coCDESNvtz";
+var airtable_read_endpoint = "https://api.airtable.com/v0/appDl5SHlWhxMMLrB/Imported%20table%202?api_key=keyAWB8coCDESNvtz";
 
 var data = [];
 $.getJSON(airtable_read_endpoint, function(result) {
        $.each(result.records, function(key,value) {
            items = {};
-               items["name"] = value.fields.Name;
-               items["url"] = value.fields.url;
-               items["image_url"] = value.fields.img_url;
+               items["Name"] = value.fields.FacilityName;
+               items["Address"] = value.fields.Address;
+               //items["image_url"] = value.fields.img_url;
                items["latitud"] = value.fields.Lat;
                items["longitud"] = value.fields.Lng;
                data.push(items);
