@@ -76,7 +76,7 @@
 }
 
 #club .nav-tabs a.active {
-  background-color: #f82249;
+  background-color: #FFD100;
   color: #fff;
 }
 
@@ -144,7 +144,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-  color: #f8234a;
+  color: #FFD100;
   outline: none;
   text-decoration: none;
 }
@@ -258,7 +258,7 @@ h6 {
 }
 
 .section-with-bg {
-  background-color: #f6f7fd;
+  background-color: rgb(253, 249, 235);
 }
 
 /*--------------------------------------------------------------
