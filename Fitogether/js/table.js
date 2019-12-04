@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 $('#SOUTHERN').click(function(){
-  $("#oneclick").hide();  
+  $("#hide").hide(); 
   $("#table1").html(
         "<thead style='font-size: 14px;'>"+
             "<tr>"+
@@ -22,7 +22,7 @@ $('#SOUTHERN').click(function(){
 
 $(document).ready(function(){
   $('#EASTERN').click(function(){
-     
+    $("#hide").hide();
     $("#table1").html(
           "<thead style='font-size: 14px;'>"+
               "<tr>"+
@@ -53,7 +53,7 @@ $(document).ready(function(){
 
   $(document).ready(function(){
     $('#KWAITSING').click(function(){
-        $("#oneclick").hide();  
+      $("#hide").hide();  
         $("#table1").html(
             "<thead style='font-size: 14px;'>"+
                 "<tr>"+
@@ -104,7 +104,7 @@ $(document).ready(function(){
 
     $(document).ready(function(){
       $('#ISLANDS').click(function(){
-         
+        $("#hide").hide();
         $("#table1").html(
               "<thead style='font-size: 14px;'>"+
                   "<tr>"+
@@ -140,7 +140,7 @@ $(document).ready(function(){
 
       $(document).ready(function(){
         $('#WONGTAISIN').click(function(){
-           
+          $("#hide").hide();
           $("#table1").html(
                 "<thead style='font-size: 14px;'>"+
                     "<tr>"+
@@ -171,7 +171,7 @@ $(document).ready(function(){
 
         $(document).ready(function(){
           $('#YAUTSIMMONG').click(function(){
-             
+            $("#hide").hide();
             $("#table1").html(
                   "<thead style='font-size: 14px;'>"+
                       "<tr>"+
@@ -207,7 +207,7 @@ $(document).ready(function(){
 
           $(document).ready(function(){
             $('#KOWLOONCITY').click(function(){
-               
+              $("#hide").hide();
               $("#table1").html(
                     "<thead style='font-size: 14px;'>"+
                         "<tr>"+
@@ -243,7 +243,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 $('#TAIPO').click(function(){
- 
+  $("#hide").hide();
 $("#table1").html(
     "<thead style='font-size: 14px;'>"+
         "<tr>"+
@@ -285,7 +285,7 @@ $("#table1").html(
 
 $(document).ready(function(){
   $('#YUENLONG').click(function(){
-   
+    $("#hide").hide();
   $("#table1").html(
       "<thead style='font-size: 14px;'>"+
           "<tr>"+
@@ -331,7 +331,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('#SAIKUNG').click(function(){
-   
+    $("#hide").hide();
   $("#table1").html(
       "<thead style='font-size: 14px;'>"+
           "<tr>"+
@@ -367,7 +367,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('#SHATIN').click(function(){
-   
+    $("#hide").hide();
   $("#table1").html(
       "<thead style='font-size: 14px;'>"+
           "<tr>"+
@@ -405,7 +405,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('#CENTRALANDWESTERN').click(function(){
-   
+    $("#hide").hide();
   $("#table1").html(
       "<thead style='font-size: 14px;'>"+
           "<tr>"+
@@ -446,7 +446,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('#KWUNTONG').click(function(){
-   
+    $("#hide").hide();
   $("#table1").html(
       "<thead style='font-size: 14px;'>"+
           "<tr>"+
@@ -488,7 +488,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('#TUENMUN').click(function(){
-   
+    $("#hide").hide();
   $("#table1").html(
       "<thead style='font-size: 14px;'>"+
           "<tr>"+
@@ -529,7 +529,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('#WANCHAI').click(function(){
-   
+    $("#hide").hide();
   $("#table1").html(
       "<thead style='font-size: 14px;'>"+
           "<tr>"+
@@ -551,7 +551,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('#NORTH').click(function(){
-   
+    $("#hide").hide();
   $("#table1").html(
       "<thead style='font-size: 14px;'>"+
           "<tr>"+
@@ -592,7 +592,7 @@ $(document).ready(function(){
 
         $(document).ready(function(){
           $('#SHAMSHUIPO').click(function(){
-           
+            $("#hide").hide();
           $("#table1").html(
               "<thead style='font-size: 14px;'>"+
                   "<tr>"+
@@ -623,7 +623,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('#TSUENWAN').click(function(){
-   
+    $("#hide").hide();
   $("#table1").html(
       "<thead style='font-size: 14px;'>"+
           "<tr>"+
