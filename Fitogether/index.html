@@ -92,7 +92,7 @@
                 <div class="row">
                   <div class="col-sm">
                       <div class="span4">
-                          <h1 class="text-center" >Healthier together</h1>
+                          <h1 class="text-center" >Healthier Together</h1>
                         </div>
                   </div>
                   <div class="col-sm">
@@ -109,7 +109,7 @@
                     <div class="row">
                       <div class="col-sm">
                           <div class="span4">
-                              <h1 class="text-center">Healthier together</h1>
+                              <h1 class="text-center">Happier Together</h1>
                             </div>
                       </div>
                       <div class="col-sm">
@@ -123,6 +123,23 @@
                             </div>
                       </div>
                     </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="span4">
+                                <h1 class="text-center">More effective Together</h1>
+                              </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="span4">
+                              <p>
+                                  <strong> Federal Institute of Technology (EPFL) </strong>developed a mobile app called HealthyTogether, which allows users to participate in daily physical exercises as a game with their friends. The researchers conducted a two-week experiment with the application. Results show that users <strong> significantly enhanced physical activities</strong>  using HealthyTogether compared with when they exercised alone by up to <strong> 15%</strong> . Among the group settings, <strong> cooperation (21% increase) and hybrid (18% increase) outperformed competition (8% increase)</strong> . 
+                              </p>
+                              <p><small>
+                                  Chen, Y., & Pu, P. (2014, April). HealthyTogether: exploring social incentives for mobile fitness applications. In Proceedings of the second international symposium of chinese chi (pp. 25-34). ACM.
+                            </small></p>
+                              </div>
+                        </div>
+                      </div>
               </div>
           </div>
 
@@ -131,68 +148,72 @@
     <!--==========================
       MAP Section responsive未完成
     ============================-->
-
     <section id="club" class="section-with-bg">
         <div class="wow fadeInUp">
   
           <div class="section-header">
             <h2>Find Fitness Rooms</h2>
           </div>
-<div class = 'row'>
-          <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Hong Kong Island
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <button class="dropdown-item" type="button"onclick="show_districts1() " id="SOUTHERN">SOUTHERN</button>
-                <button class="dropdown-item" onclick="show_districts2()"id="EASTERN">EASTERN</button>
-                <button class="dropdown-item" onclick="show_districts3()"id="CENTRAL AND WESTERN">CENTRAL AND WESTERN</button>
-                <button class="dropdown-item" onclick="show_districts4()"id="TUEN MUN">TUEN MUN</button>
-              </div>
-          </div>
-              <!--end list-->
-        
-              <div class="dropdown">      
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Kowloon a peninsula
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                <button class="dropdown-item" onclick="show_districts5()"id="KOWLOON CITY">KOWLOON CITY</button>
-                <button class="dropdown-item" onclick="show_districts6()"id="KWUN TONG">KWUN TONG</button>
-                <button class="dropdown-item" onclick="show_districts7()"id="SHAM SHUI PO">SHAM SHUI PO</button>
-                <button class="dropdown-item" onclick="show_districts8()"id="WONG TAI SIN">WONG TAI SIN</button>
-                <button class="dropdown-item" onclick="show_districts9()"id="YAU TSIM MONG">YAU TSIM MONG</button>
-    
-        </div>
-        </div>
-        <!--end list-->
-        <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                New Territories
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-          <button class="dropdown-item" onclick="show_districts10()"id="ISLANDS">ISLANDS</button>
-          <button class="dropdown-item" onclick="show_districts11()"id="KWAI TSING">KWAI TSING</button>
-          <button class="dropdown-item" onclick="show_districts12()"id="NORTH">NORTH</button>
-          <button class="dropdown-item" onclick="show_districts13()"id="SAI KUNG">SAI KUNG</button>
-          <button class="dropdown-item" onclick="show_districts14()"id="SHA TIN">SHA TIN</button>
-          <button class="dropdown-item" onclick="show_districts15()"id="TAI PO">TAI PO</button>
-          <button class="dropdown-item" onclick="show_districts16()"id="TSUEN WAN">TSUEN WAN</button>
-          <button class="dropdown-item" onclick="show_districts17()"id="TUEN MUN">TUEN MUN</button>
-          <button class="dropdown-item" onclick="show_districts18()"id="YUEN LONG">YUEN LONG</button>
-              </div>
-              <!--end list-->
-          </div>
-       <!--end dropdown-->
-        </div>
+
               <div class="row no-gutters" id="GTA">
-              <div class="col-lg-6" id = 'showmap'>
+              <div class="col-lg-6" id = 'showmap'style='min-height: 350px'>
                       <div id="map"><iframe frameborder="0" style="border:0" allowfullscreen></iframe></div>
               </div>
               <div class="col-lg-6 club-info">
                   <div class="row justify-content-center">
                     <div class="col-12 col-lg-12">
-                      <h2 id='oneclick'style="color: bisque;"class="container text-center">Fitness rooms on one click</h2>
+                      <!--district buttons--> 
+                      <div class = 'container'>
+                          <div class = 'row'>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Hong Kong Island
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <button class="dropdown-item" type="button"onclick="show_districts1() " id="SOUTHERN">SOUTHERN</button>
+                                  <button class="dropdown-item" onclick="show_districts2()"id="EASTERN">EASTERN</button>
+                                  <button class="dropdown-item" onclick="show_districts3()"id="CENTRALANDWESTERN">CENTRAL AND WESTERN</button>
+                                  <button class="dropdown-item" onclick="show_districts4()"id="WANCHAI">WAN CHAI</button>
+                                </div>
+                            </div>
+                                <!--end list-->
+                          
+                                <div class="dropdown">      
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kowloon a peninsula
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                  <button class="dropdown-item" onclick="show_districts5()"id="KOWLOONCITY">KOWLOON CITY</button>
+                                  <button class="dropdown-item" onclick="show_districts6()"id="KWUNTONG">KWUN TONG</button>
+                                  <button class="dropdown-item" onclick="show_districts7()"id="SHAMSHUIPO">SHAM SHUI PO</button>
+                                  <button class="dropdown-item" onclick="show_districts8()"id="WONGTAISIN">WONG TAI SIN</button>
+                                  <button class="dropdown-item" onclick="show_districts9()"id="YAUTSIMMONG">YAU TSIM MONG</button>
+                      
+                          </div>
+                          </div>
+                          <!--end list-->
+                          <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  New Territories
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                            <button class="dropdown-item" onclick="show_districts10()"id="ISLANDS">ISLANDS</button>
+                            <button class="dropdown-item" onclick="show_districts11()"id="KWAITSING">KWAI TSING</button>
+                            <button class="dropdown-item" onclick="show_districts12()"id="NORTH">NORTH</button>
+                            <button class="dropdown-item" onclick="show_districts13()"id="SAIKUNG">SAI KUNG</button>
+                            <button class="dropdown-item" onclick="show_districts14()"id="SHATIN">SHA TIN</button>
+                            <button class="dropdown-item" onclick="show_districts15()"id="TAIPO">TAI PO</button>
+                            <button class="dropdown-item" onclick="show_districts16()"id="TSUENWAN">TSUEN WAN</button>
+                            <button class="dropdown-item" onclick="show_districts17()"id="TUENMUN">TUEN MUN</button>
+                            <button class="dropdown-item" onclick="show_districts18()"id="YUENLONG">YUEN LONG</button>
+                                </div>
+                                <!--end list-->
+                            </div>
+                         <!--end dropdown-->
+                          </div>
+                      </div>
+                          <!--end district buttons--> 
+                      <h2 id='oneclick'style="color: bisque;"class="container text-center">BY DISTRICTS</h2>
                       <table id="table1" width="100%" class="table table-dark">
                       </table>
                       

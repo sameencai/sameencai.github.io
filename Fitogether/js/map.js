@@ -2,7 +2,7 @@ var mapboxTiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.pn
 
 var map = L.map('map')
       .addLayer(mapboxTiles)
-      .setView([22.287111, 114.191667], 10);
+      .setView([22.347111, 114.191667], 10);
 
 //1. Southern      
 var items1 = [];
