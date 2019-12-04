@@ -271,7 +271,7 @@ function show_districts10(){
 
 }//11. KWAI TSING      
 var items11 = [];
-var airtable_read_endpoint = "https://api.airtable.com/v0/appVoKEyAyP9PBCZD/Table%201?";
+var airtable_read_endpoint = "https://api.airtable.com/v0/appVoKEyAyP9PBCZD/Table%201?api_key=keyAWB8coCDESNvtz";
 var data11 = [];
 $.getJSON(airtable_read_endpoint, function(result) {
        $.each(result.records, function(key,value) {
