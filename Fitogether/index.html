@@ -127,83 +127,87 @@
           </div>
 
 
-<!--==========================
-      MAP Section responsive未完成
-    ============================-->
+
     <!--==========================
       MAP Section responsive未完成
     ============================-->
-    <section id="club" class="wow fadeInUp">
 
-        <div class="container-fluid">
+    <section id="club" class="section-with-bg">
+        <div class="wow fadeInUp">
   
           <div class="section-header">
             <h2>Find Fitness Rooms</h2>
           </div>
-
+<div class = 'row'>
           <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Hong Kong Island
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" onclick="show_districts()">SOUTHERN</a>
-                <a class="dropdown-item" href="#">EASTERN</a>
-                <a class="dropdown-item" href="#">CENTRAL AND WESTERN</a>
-                <a class="dropdown-item" href="#">TUEN MUN</a>
+                  <button class="dropdown-item" type="button"onclick="show_districts1() " id="SOUTHERN">SOUTHERN</button>
+                <button class="dropdown-item" onclick="show_districts2()"id="EASTERN">EASTERN</button>
+                <button class="dropdown-item" onclick="show_districts3()"id="CENTRAL AND WESTERN">CENTRAL AND WESTERN</button>
+                <button class="dropdown-item" onclick="show_districts4()"id="TUEN MUN">TUEN MUN</button>
               </div>
+          </div>
               <!--end list-->
         
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="dropdown">      
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Kowloon a peninsula
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">KOWLOON CITY</a>
-                <a class="dropdown-item" href="#">KWUN TONG</a>
-                <a class="dropdown-item" href="#">SHAM SHUI PO</a>
-                <a class="dropdown-item" href="#">WONG TAI SIN</a>
-                <a class="dropdown-item" href="#">YAU TSIM MONG</a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                <button class="dropdown-item" onclick="show_districts5()"id="KOWLOON CITY">KOWLOON CITY</button>
+                <button class="dropdown-item" onclick="show_districts6()"id="KWUN TONG">KWUN TONG</button>
+                <button class="dropdown-item" onclick="show_districts7()"id="SHAM SHUI PO">SHAM SHUI PO</button>
+                <button class="dropdown-item" onclick="show_districts8()"id="WONG TAI SIN">WONG TAI SIN</button>
+                <button class="dropdown-item" onclick="show_districts9()"id="YAU TSIM MONG">YAU TSIM MONG</button>
     
-          
+        </div>
         </div>
         <!--end list-->
-    
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 New Territories
               </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">ISLANDS</a>
-          <a class="dropdown-item" href="#">KWAI TSING</a>
-          <a class="dropdown-item" href="#">NORTH</a>
-          <a class="dropdown-item" href="#">SAI KUNG</a>
-          <a class="dropdown-item" href="#">SHA TIN</a>
-          <a class="dropdown-item" href="#">TAI PO</a>
-          <a class="dropdown-item" href="#">TSUEN WAN</a>
-          <a class="dropdown-item" href="#">TUEN MUN</a>
-          <a class="dropdown-item" href="#">YUEN LONG</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+          <button class="dropdown-item" onclick="show_districts10()"id="ISLANDS">ISLANDS</button>
+          <button class="dropdown-item" onclick="show_districts11()"id="KWAI TSING">KWAI TSING</button>
+          <button class="dropdown-item" onclick="show_districts12()"id="NORTH">NORTH</button>
+          <button class="dropdown-item" onclick="show_districts13()"id="SAI KUNG">SAI KUNG</button>
+          <button class="dropdown-item" onclick="show_districts14()"id="SHA TIN">SHA TIN</button>
+          <button class="dropdown-item" onclick="show_districts15()"id="TAI PO">TAI PO</button>
+          <button class="dropdown-item" onclick="show_districts16()"id="TSUEN WAN">TSUEN WAN</button>
+          <button class="dropdown-item" onclick="show_districts17()"id="TUEN MUN">TUEN MUN</button>
+          <button class="dropdown-item" onclick="show_districts18()"id="YUEN LONG">YUEN LONG</button>
               </div>
               <!--end list-->
           </div>
        <!--end dropdown-->
-  
+        </div>
               <div class="row no-gutters" id="GTA">
-              <div class="col-lg-6">
-                      <div id="map" class="container"><iframe frameborder="0" style="border:0" allowfullscreen></iframe></div>
+              <div class="col-lg-6" id = 'showmap'>
+                      <div id="map"><iframe frameborder="0" style="border:0" allowfullscreen></iframe></div>
               </div>
               <div class="col-lg-6 club-info">
                   <div class="row justify-content-center">
-                    <div class="col-11 col-lg-8">
-                      <h3>Golden Trust Archery</h3>
-                      <table id="table1" width="100%" class="table table-bordered table-dark"></table>
+                    <div class="col-12 col-lg-12">
+                      <h2 id='oneclick'style="color: bisque;"class="text-center">Fitness rooms on one click</h2>
+                      <table id="table1" width="100%" class="table table-dark">
+                      </table>
+                      
                       </div>
                       </div>
                       </div>
              <!--end col-->
               </div>
               <!--end row-->
+              
               <div id="map"></div>
               <script src="js/map.js"></script>
         </div>
       </div>
+    </div>
       </section>
       
       
@@ -388,6 +392,9 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+
+  
+  <script src="js/table.js"></script>
 </body>
 
 </html>
