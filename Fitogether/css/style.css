@@ -4,7 +4,11 @@
   Author: BootstrapMade.com
   License: https://bootstrapmade.com/license/
 */
+.modal-backdrop{
 
+  z-index:0;
+  
+  }
 /*--------------------------------------------------------------
 # Club Section
 --------------------------------------------------------------*/
