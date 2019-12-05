@@ -4,11 +4,21 @@
   Author: BootstrapMade.com
   License: https://bootstrapmade.com/license/
 */
-.modal-backdrop{
+#shortversion.modal-backdrop{
 
   z-index:1000;
   
   }
+#exampleModalScrollable.modal-backdrop{
+
+z-index:1000;
+
+}
+#exampleModalScrollable2.modal-backdrop{
+
+z-index:1000;
+
+}
 /*--------------------------------------------------------------
 # Club Section
 --------------------------------------------------------------*/
