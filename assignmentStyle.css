@@ -1,0 +1,15 @@
+body {
+    padding-left: 5em;
+    margin-top: 5%;
+    font-family: 'Lexend Deca', sans-serif;
+    color: purple;
+    background-color: rgba(221, 221, 187, 0.329) }
+h1 {font-family: 'Manjari', sans-serif; }
+a:link {
+    color: white }
+a:visited {
+    color: purple }
+address {
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: thin dotted}
