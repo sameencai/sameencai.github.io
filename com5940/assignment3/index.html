@@ -58,11 +58,6 @@
                 </div>
             </div>
         </div>
-        <script>
-        $('.carousel').carousel({
-  interval: 2000
-})  
-        </script>
         <div class="carousel slide" id="fullcarousel-example" data-interval="2000"
         data-ride="carousel">
             <div class="carousel-inner" id="slides_items">
@@ -147,6 +142,11 @@
                         </div>
                     </div>
                 </div>`);
+                        counter = counter +1; // counter++;
+                        if (counter == 4) {
+                            $("#album_items").append(`<div class="/row">`);
+                            counter = 1;
+                        };
                 {$("#slides_items").append(`<div class="item">
                     <img src="${image}">
                     <div class="carousel-caption">
@@ -157,12 +157,6 @@
                         </h3>
                     </div>
                 </div>`)};
-                        counter = counter +1; // counter++;
-                        if (counter == 4) {
-                            $("#album_items").append(`<div class="/row">`);
-                            counter = 1;
-                        };
-
 
                 }); // end each
             }); // end getJSON
@@ -231,29 +225,6 @@
                 }); // end onclick
 
                 //slides
-$(document).ready(function(){
-    var a = 1;
-    var a_getapi = "https://api.airtable.com/v0/appEasnYEHprDFIxQ/Table%201?api_key=keyAWB8coCDESNvtz";
-    $.getJSON(a_getapi, function(result) {
-        $.each(result.records, function(key,value) {
-                var image = value.fields.url;
-                if (a == 1) {$("#slides_items").append(`<div class="item">`)};
-                $("#album_items").append(`
-                <img src="${image}">
-                    <div class="carousel-caption">
-                        <h1>One poster, One movie</h1>
-                        <h3>Swipe to see more
-                            <br>
-                            ↓
-                        </h3>
-                    </div>
-                </div>`
-        );
-                a = a +1; // counter++;
-                a = 1;
-                });
-        }); // end each
-    }); // end getJSON
             
     </script>
      <script type="text/javascript" src="js/index.js"></script>
