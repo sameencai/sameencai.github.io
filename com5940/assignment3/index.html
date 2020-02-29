@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="css/latofont.css" rel="stylesheet" type="text/css">
+        <link href="css/mystyle.css" rel="stylesheet" type="text/css">
+        <link href="css/button.css" rel="stylesheet" type="text/css">
+
+        <title>Assignment 3</title>
+
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'self' data: gap: 'unsafe-inline' 'unsafe-eval';
+        style-src * 'self' 'unsafe-inline' 'unsafe-eval' gap:;
+        script-src * 'self' 'unsafe-inline' 'unsafe-eval' gap:; frame-src *;">
+
+        <script>
+            function modal_handle(name, org_desc, image) {
+                            $("h3.modal-title").html(`${name}`);
+                            $(".modal-body").html(`<img src="${image}"
+                                class="img-responsive"><p>${org_desc}</p>`);
+                            $('#popup-photo').modal('show');
+                } // end modal_handle function
+
+                function topFunction() {
+                    $('html, body').animate({scrollTop : 0},800);
+                    return false;
+                } // end topFunction
+        </script>
+
+    </head>
+    
+    <body>
+        <div id="top"></div>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header" >
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active">
+                            <a href="#top">Home</a>
+                        </li>
+                        <li>
+                            <a href="#album">Album</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="carousel slide" id="fullcarousel-example" data-interval="false"
+        data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item">
+                    <img src="file/p468734422.jpg">
+                    <div class="carousel-caption">
+                        <h1>One poster, One movie</h1>
+                        <h3>Swipe to see more
+                            <br>
+                            ↓
+                        </h3>
+                    </div>
+                </div>
+                <div class="item active">
+                    <img src="file/p475749975.jpg">
+                    <div class="carousel-caption">
+                        <h1>One poster, One movie</h1>
+                        <h3>Swipe to see more<br>
+                            ↓</h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="file/p2351206461.jpg">
+                    <div class="carousel-caption">
+                        <h1>One poster, One movie</h1>
+                        <h3>Swipe to see more<br>
+                            ↓</h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="file/p2161272209.jpg">
+                    <div class="carousel-caption">
+                        <h2>One poster, One movie</h2>
+                        <h3>Swipe to see more<br>
+                            ↓</h3>
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control" href="#fullcarousel-example" data-slide="prev"><i class="icon-prev fa fa-angle-left"></i></a>
+            <a class="right carousel-control" href="#fullcarousel-example" data-slide="next"><i class="icon-next fa fa-angle-right"></i></a>
+        </div>
+        <div class="section">
+            <div id="album">
+                <div class="container" id="album_items"></div>
+            </div>
+        <div class="modal fade" id="popup-photo">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 class="modal-title"></h3>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                        <p></p>
+                        <a class="btn btn-default" data-dismiss="modal">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+        <button class="button email"onclick="topFunction()" id="myBtn" title="Go to top"
+        style="float: right;">Top</button>
+    </div>
+        <footer class="section section-primary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6" style="
+                    color: white;
+                    vertical-align: middle;
+                    text-decoration: none; ">
+                        <p>Sameen CAI</p>
+                    </div>
+                        <p class="float-right">
+                                <a href="#top" style="
+                                color: white;
+                                vertical-align: middle;
+                                text-decoration: none; float: right;">Back to top</a>
+                            </p>
+            </div>
+        </footer>
+    </body>
+<script>
+        $(document).ready(function(){
+            var counter = 1;
+            var at_getapi = "https://api.airtable.com/v0/appEasnYEHprDFIxQ/Table%201?api_key=keyAWB8coCDESNvtz";
+            $.getJSON(at_getapi, function(result) {
+                $.each(result.records, function(key,value) {
+                        var name = value.fields.Name;
+                        var image = value.fields.url;
+                        var desc = value.fields.desc;
+                        var Year = value.fields.Year;
+                        var Cast = value.fields.Cast;
+                        var Type = value.fields.Type;
+                        if (counter == 1) {$("#album_items").append(`<div class="row">`)};
+                        $("#album_items").append(`<div class="col-md-4">
+                    <div class="thumbnail">
+                        <img height="auto" width="auto" src="${image}"
+                        class="img-responsive">
+                        <div class="caption">
+                            <h3>${name} (${Year})</h3>
+                            <p>Type: ${Type} 
+                                <br>
+                                Cast: ${Cast}
+                                </p>
+                            <button class="button  arrow" onclick="modal_handle('${name}','${desc}','${image}')" data-toggle="modal"
+                             data-id="107" data-body="testing...">View</button>
+                        </div>
+                    </div>
+                </div>`);
+                        counter = counter +1; // counter++;
+                        if (counter == 4) {
+                            $("#album_items").append(`<div class="/row">`);
+                            counter = 1;
+                        };
+
+                }); // end each
+            }); // end getJSON
+
+            var mybutton = document.getElementById("myBtn");
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+            }
+            // When the user clicks on the button, scroll to the top of the document
+        }); // end document ready
+    </script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script id="rendered-js">
+        // jQuery Smooth Scroll
+                // https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_animate_smoothscroll
+                $("a").on('click', function(event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function(){
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                }); // end animate
+                } // End if this.hash
+                }); // end onclick
+
+                $("a").on('click touchend', function(event) {
+
+                 // Make sure this.hash has a value before overriding default behavior
+                 if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function(){
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                }); // end animate
+                } // End if this.hash
+                }); // end onclick
+    </script>
+     <script type="text/javascript" src="js/index.js"></script>
+</html>
