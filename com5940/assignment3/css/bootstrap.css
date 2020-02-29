@@ -6204,9 +6204,11 @@ button.close {
 }
 .carousel-control .icon-prev:before {
   content: '\2039';
+  font-size: 100px;
 }
 .carousel-control .icon-next:before {
   content: '\203a';
+  font-size: 100px;
 }
 .carousel-indicators {
   position: absolute;
