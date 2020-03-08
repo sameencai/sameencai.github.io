@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+   {% for item in dataset %}
+        {% if loop.index == 1 %}{% set counter = ( counter | default(1) ) %}{% endif %}
+        {% if counter == 1 %}<div class="row">{% endif %}
+          <div class="col-md-4">
+            <div class="thumbnail" style="height: 510px">
+                <img height="auto" width="auto" src="{{ item['url'] }}"
+                class="img-responsive">
+                <div style=" margin-left: 10px; margin-right: 10px;height: 230px;">
+                <h3>{{ item['Name'] }} {{ item['Year'] }}</h3>
+                <p>Cast: {{ item['Cast'] }}<br>Type: {{ item['Type'] }}<br><br>{{ item['desc'] }}</p>
+                </div>
+                 <div style="text-align: center; margin-bottom: 5px;">
+                    <button type="button" class="button  arrow" >View</button>
+                  </div>
+            </div>
+          </div> 
+       {% if counter == 3 %}</div><!--end row-->{%  set counter = ( counter | default(1) ) %}{% else %}{% set counter = ( counter | default(0) ) + 1 %}{% endif %}
+      {% endfor %} 
+</div>
+{% endblock %}
