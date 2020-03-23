@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<header id="header">
+    <div class="container">
+      <div id="logo" class="pull-left">
+        <a href="/" class="scrollto"><img src="{{url_for('static', filename='img/logo1.png')}}" alt="" title="" style="max-height: 40px"></a>
+      <nav id="nav-menu-container">
+        </div>
+        <ul class="nav-menu pull-right">
+          <li><a href="/">Home</a></li>
+          <li class="menu-active"><a href="/album/1">Album</a></li>
+          <li ><a href="/list_album">Products</a></li>
+          <li> </li>
+          <li><a href="/logout">Logout</a></li>
+          <li><a href="/login">Login</a></li>
+          </ul>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header>
+<div class="container" style="margin-top: 90px;">
+  {% for facility in facilities.items %}
+       {% if loop.index == 1 %}{% set counter = ( counter | default(1) ) %}{% endif %}
+        {% if counter == 1 %}<div class="row">{% endif %}
+        <div class="col-md-4">
+          <div class="thumbnail"  style="height:270px ;">
+              <p>Facility Id: {{ facility.FacilityId }}<br>Facility Name: {{ facility.FacilityName }}<br>Address: {{ facility.Address }}<br>District: {{ facility.District }}<br>Facility Type: {{ facility.FacilityType }}</p> 
+              <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+          </div>
+        </div> 
+       {% if counter == 3 %}</div><!--end row-->{%  set counter = ( counter | default(1) ) %}{% else %}{% set counter = ( counter | default(0) ) + 1 %}{% endif %}
+  {% endfor %}
+  <div class="container" style="float: left;">
+  {% for page in facilities.iter_pages() %}  
+    {% if page %}
+        <a href="{{url_for('album')}}/{{ page }}">{{ page }}</a>
+    {% else %}
+        ...
+    {% endif %}
+  {% endfor %}  
+  </div>
+{% endblock %}
