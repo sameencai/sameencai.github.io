@@ -7402,7 +7402,7 @@ z-index:1000;
 --------------------------------------------------------------*/
 
 body {
-  background: #fff;
+  background: rgba(115, 59, 39, 0.603);
   color: #2f3138;
   font-family: 'Lato', sans-serif;
 }
